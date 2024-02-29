@@ -29,7 +29,7 @@ local function parse_query_response(res)
 		-- 2: light
 		return string.match(res, "uint32 1") ~= nil
 	elseif system == "Darwin" then
-		return res == "Dark"
+		return string.find(res, "Dark") ~= nil
 	elseif system == "Windows_NT" or system == "WSL" then
 		-- AppsUseLightTheme    REG_DWORD    0x0 : dark
 		-- AppsUseLightTheme    REG_DWORD    0x1 : light
